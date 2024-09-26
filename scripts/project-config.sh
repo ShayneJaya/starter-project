@@ -20,6 +20,7 @@ EXT_VIEW=sql
 # Format:
 # <name>:<template_file prefix (no extension)>:<file extensions (; delimited)>:<destination directory>
 #
+#
 # Definitions:
 # - name: Name that will be mapped to VSCode task
 # - template file: Template file prefix to use (no extension)
