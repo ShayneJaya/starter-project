@@ -32,11 +32,13 @@ define 2
 define APP_ID = "&1"
 define EXPORT_OPTIONS = "&2"
 
+
 set termout on
 set serveroutput on
 begin
   dbms_output.put_line ( 'App ID: &APP_ID' );
   dbms_output.put_line ( 'Export Options: &EXPORT_OPTIONS' );
+
   dbms_output.put_line ( '------------------' );
 end;
 /

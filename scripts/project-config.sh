@@ -3,7 +3,7 @@
 # Name of Schema
 SCHEMA_NAME=WKSP_CIDEV
 # Name of default workspace that applications are associated with
-APEX_WORKSPACE=CI_DEV
+APEX_WORKSPACE=10135125799703166
 # Comma delimited list of APEX Applications to export. Ex: 100,200
 APEX_APP_IDS=181
 

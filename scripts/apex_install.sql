@@ -14,6 +14,7 @@ begin
   apex_application_install.set_application_id(&3.);
   apex_application_install.set_schema(upper('&1.'));
   apex_application_install.set_workspace(upper('&2.'));
+
   apex_application_install.generate_offset;
 
 end;

@@ -111,6 +111,10 @@ verify_config(){
     echo -e "${COLOR_RED}APEX_WORKSPACE is not configured.${COLOR_RESET} Modify $PROJECT_CONFIG_FILE"
     exit
   fi
+  if [[ $APEX_WORKSPACE = "" ]]; then
+    echo -e "${COLOR_RED}APEX_WORKSPACE is blank.${COLOR_RESET} Modify $PROJECT_CONFIG_FILE"
+    exit
+  fi
 
   # Check that DB connection string is defined
   if [[ $DB_CONN == *"CHANGME_USERNAME"* ]]; then
