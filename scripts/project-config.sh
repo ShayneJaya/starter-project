@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Name of Schema
-SCHEMA_NAME=CHANGEME
+SCHEMA_NAME=WKSP_CIDEV
 # Name of default workspace that applications are associated with
-APEX_WORKSPACE=CHANGEME
+APEX_WORKSPACE="CI_DEV"
 # Comma delimited list of APEX Applications to export. Ex: 100,200
-APEX_APP_IDS=CHANGEME
+APEX_APP_IDS="181"
 
 
 # File extensions
@@ -19,7 +19,7 @@ EXT_VIEW=sql
 # This will be used in VSCode to allow for quick generate of a given file based on template data
 # Format:
 # <name>:<template_file prefix (no extension)>:<file extensions (; delimited)>:<destination directory>
-# 
+#
 # Definitions:
 # - name: Name that will be mapped to VSCode task
 # - template file: Template file prefix to use (no extension)
