@@ -111,7 +111,7 @@ verify_config(){
     echo -e "${COLOR_RED}APEX_WORKSPACE is not configured.${COLOR_RESET} Modify $PROJECT_CONFIG_FILE"
     exit
   fi
-  if [[ $APEX_WORKSPACE = "" ]]; then
+  if [[ $APEX_WORKSPACE = " " ]]; then
     echo -e "${COLOR_RED}APEX_WORKSPACE is blank.${COLOR_RESET} Modify $PROJECT_CONFIG_FILE"
     exit
   fi
@@ -134,10 +134,11 @@ export_apex_app(){
   for APEX_APP_ID in $(echo $APEX_APP_IDS | sed "s/,/ /g")
   do
     echo "APEX Export: $APEX_APP_ID"
-
+    echo "APEX Workspace: $APEX_WORKSPACE"
     # Export single file app
     # Need to start in root project dicetory as export will automatically store files in the apex folder
     cd $PROJECT_DIR
+    echo  $PROJECT_DIR
 
     echo exit | $SQLCL $DB_CONN @scripts/apex_export.sql $APEX_APP_ID
     

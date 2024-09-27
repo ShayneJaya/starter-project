@@ -38,7 +38,6 @@ set serveroutput on
 begin
   dbms_output.put_line ( 'App ID: &APP_ID' );
   dbms_output.put_line ( 'Export Options: &EXPORT_OPTIONS' );
-
   dbms_output.put_line ( '------------------' );
 end;
 /
