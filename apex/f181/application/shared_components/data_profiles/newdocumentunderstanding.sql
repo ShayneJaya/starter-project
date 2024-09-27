@@ -1,0 +1,89 @@
+prompt --application/shared_components/data_profiles/newdocumentunderstanding
+begin
+--   Manifest
+--     DATA PROFILE: NewDocumentUnderstanding
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.1'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>181
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_CIDEV'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(20273019423142149)
+,p_name=>'NewDocumentUnderstanding'
+,p_format=>'JSON'
+,p_has_header_row=>false
+,p_row_selector=>'pages.documentFields'
+,p_use_raw_json_selectors=>false
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(20328389566192756)
+,p_data_profile_id=>wwv_flow_imp.id(20273019423142149)
+,p_name=>'FIELDNAME'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'fieldName'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(20328804773192757)
+,p_data_profile_id=>wwv_flow_imp.id(20273019423142149)
+,p_name=>'FIELD TYPE'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'fieldType'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(20329321577192757)
+,p_data_profile_id=>wwv_flow_imp.id(20273019423142149)
+,p_name=>'FIELDLABEL_NAME'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'fieldLabel.name'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(20329843566192757)
+,p_data_profile_id=>wwv_flow_imp.id(20273019423142149)
+,p_name=>'FIELDLABEL_CONFIDENCE'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'fieldLabel.confidence'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(20330365718192758)
+,p_data_profile_id=>wwv_flow_imp.id(20273019423142149)
+,p_name=>'FIELDVALUE_TEXT'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'fieldValue.text'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(20342865134192765)
+,p_data_profile_id=>wwv_flow_imp.id(20273019423142149)
+,p_name=>'FIELDVALUE_VALUETYPE'
+,p_sequence=>30
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'fieldValue.valueType'
+);
+wwv_flow_imp.component_end;
+end;
+/

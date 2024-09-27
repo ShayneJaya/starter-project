@@ -1,0 +1,60 @@
+prompt --application/shared_components/web_sources/uploadpart
+begin
+--   Manifest
+--     WEB SOURCE: UploadPart
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.1'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>181
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_CIDEV'
+);
+wwv_flow_imp_shared.create_web_source_module(
+ p_id=>wwv_flow_imp.id(15647878955919116)
+,p_name=>'UploadPart'
+,p_static_id=>'uploadpart'
+,p_web_source_type=>'NATIVE_OCI'
+,p_data_profile_id=>wwv_flow_imp.id(15646752093919114)
+,p_remote_server_id=>wwv_flow_imp.id(65552523232929132)
+,p_url_path_prefix=>'b/multipartupload/u/#OBJECTNAME#'
+,p_credential_id=>wwv_flow_imp.id(19658076427408676)
+,p_version_scn=>41694085059146
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15648026668919116)
+,p_web_src_module_id=>wwv_flow_imp.id(15647878955919116)
+,p_operation=>'GET'
+,p_database_operation=>'FETCH_COLLECTION'
+,p_url_pattern=>'.'
+,p_force_error_for_http_404=>false
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15648485373919116)
+,p_web_src_module_id=>wwv_flow_imp.id(15647878955919116)
+,p_operation=>'POST'
+,p_database_operation=>'INSERT'
+,p_url_pattern=>'.'
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15648835394919117)
+,p_web_src_module_id=>wwv_flow_imp.id(15647878955919116)
+,p_operation=>'PUT'
+,p_url_pattern=>'/:uploadId/:uploadPartNum'
+,p_force_error_for_http_404=>false
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15649284984919117)
+,p_web_src_module_id=>wwv_flow_imp.id(15647878955919116)
+,p_operation=>'DELETE'
+,p_database_operation=>'DELETE'
+,p_url_pattern=>'/:id'
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp.component_end;
+end;
+/

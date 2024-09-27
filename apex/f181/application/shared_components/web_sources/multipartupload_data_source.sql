@@ -1,0 +1,91 @@
+prompt --application/shared_components/web_sources/multipartupload_data_source
+begin
+--   Manifest
+--     WEB SOURCE: MultiPartUpload Data Source
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.1'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>181
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_CIDEV'
+);
+wwv_flow_imp_shared.create_web_source_module(
+ p_id=>wwv_flow_imp.id(15635674051835042)
+,p_name=>'MultiPartUpload Data Source'
+,p_static_id=>'multipartupload_data_source'
+,p_web_source_type=>'NATIVE_OCI'
+,p_data_profile_id=>wwv_flow_imp.id(15634591330835034)
+,p_remote_server_id=>wwv_flow_imp.id(65552523232929132)
+,p_url_path_prefix=>'b/multipartupload/u'
+,p_credential_id=>wwv_flow_imp.id(19658076427408676)
+,p_version_scn=>41694043087823
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(15643512670847691)
+,p_web_src_module_id=>wwv_flow_imp.id(15635674051835042)
+,p_name=>'RESPONSE'
+,p_param_type=>'BODY'
+,p_is_required=>false
+,p_direction=>'OUT'
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(15643862465848976)
+,p_web_src_module_id=>wwv_flow_imp.id(15635674051835042)
+,p_name=>'Content-Type'
+,p_param_type=>'HEADER'
+,p_data_type=>'VARCHAR2'
+,p_is_required=>false
+,p_value=>'application/json'
+,p_is_static=>true
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15635826235835044)
+,p_web_src_module_id=>wwv_flow_imp.id(15635674051835042)
+,p_operation=>'GET'
+,p_database_operation=>'FETCH_COLLECTION'
+,p_url_pattern=>'.'
+,p_force_error_for_http_404=>false
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15636239655835046)
+,p_web_src_module_id=>wwv_flow_imp.id(15635674051835042)
+,p_operation=>'POST'
+,p_url_pattern=>'.'
+,p_request_body_template=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'{',
+'  "object": "#OBJECTNAME#"',
+'}'))
+,p_force_error_for_http_404=>false
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(15637645965839367)
+,p_web_src_module_id=>wwv_flow_imp.id(15635674051835042)
+,p_web_src_operation_id=>wwv_flow_imp.id(15636239655835046)
+,p_name=>'OBJECTNAME'
+,p_param_type=>'BODY'
+,p_data_type=>'VARCHAR2'
+,p_is_required=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15636678473835046)
+,p_web_src_module_id=>wwv_flow_imp.id(15635674051835042)
+,p_operation=>'PUT'
+,p_database_operation=>'UPDATE'
+,p_url_pattern=>'/:id'
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(15637038713835047)
+,p_web_src_module_id=>wwv_flow_imp.id(15635674051835042)
+,p_operation=>'DELETE'
+,p_database_operation=>'DELETE'
+,p_url_pattern=>'/:id'
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp.component_end;
+end;
+/
