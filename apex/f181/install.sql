@@ -14,12 +14,14 @@ prompt --install
 @@application/shared_components/data_profiles/document_understanding.sql
 @@application/shared_components/data_profiles/newdocumentunderstanding.sql
 @@application/shared_components/data_profiles/employees_table_sample.sql
+@@application/shared_components/data_profiles/post_emp_table.sql
 @@application/shared_components/web_sources/list_objects.sql
 @@application/shared_components/web_sources/multipartupload_data_source.sql
 @@application/shared_components/web_sources/uploadpart.sql
 @@application/shared_components/web_sources/document_understanding.sql
 @@application/shared_components/web_sources/newdocumentunderstanding.sql
 @@application/shared_components/web_sources/employees_table_sample.sql
+@@application/shared_components/web_sources/post_emp_table.sql
 @@application/shared_components/navigation/lists/navigation_menu.sql
 @@application/shared_components/navigation/lists/navigation_bar.sql
 @@application/shared_components/navigation/lists/tip_menu.sql
@@ -208,6 +210,7 @@ prompt --install
 @@application/pages/page_00056.sql
 @@application/pages/page_00057.sql
 @@application/pages/page_00058.sql
+@@application/pages/page_00060.sql
 @@application/pages/page_09999.sql
 @@application/pages/page_10000.sql
 @@application/pages/page_10010.sql

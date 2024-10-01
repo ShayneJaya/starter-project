@@ -1,0 +1,139 @@
+prompt --application/shared_components/web_sources/post_emp_table
+begin
+--   Manifest
+--     WEB SOURCE: POST EMP Table
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.1'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>181
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_CIDEV'
+);
+wwv_flow_imp_shared.create_web_source_module(
+ p_id=>wwv_flow_imp.id(25055637796818449)
+,p_name=>'POST EMP Table'
+,p_static_id=>'post_emp_table'
+,p_web_source_type=>'NATIVE_HTTP'
+,p_data_profile_id=>wwv_flow_imp.id(25054531346818445)
+,p_remote_server_id=>wwv_flow_imp.id(24060350621445966)
+,p_url_path_prefix=>'hr/emp_post_example/'
+,p_version_scn=>41917235281283
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(25055842788818450)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_operation=>'GET'
+,p_database_operation=>'FETCH_COLLECTION'
+,p_url_pattern=>'.'
+,p_force_error_for_http_404=>false
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(25056201364818452)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_operation=>'POST'
+,p_url_pattern=>'.'
+,p_request_body_template=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'{"ename":"#ENAME#",',
+'"ejob":"#EJOB#",',
+'"mgr": #MGR#,',
+'"sal": #SAL#,',
+'"comm": #COMM#,',
+'"deptno": #DEPTNO#}'))
+,p_force_error_for_http_404=>false
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25057668275821731)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'ENAME'
+,p_param_type=>'BODY'
+,p_data_type=>'VARCHAR2'
+,p_is_required=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25058159299821732)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'EJOB'
+,p_param_type=>'BODY'
+,p_data_type=>'VARCHAR2'
+,p_is_required=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25058676262821733)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'MGR'
+,p_param_type=>'BODY'
+,p_data_type=>'NUMBER'
+,p_is_required=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25059178038821734)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'SAL'
+,p_param_type=>'BODY'
+,p_data_type=>'NUMBER'
+,p_is_required=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25059634212821734)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'COMM'
+,p_param_type=>'BODY'
+,p_data_type=>'NUMBER'
+,p_is_required=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25060182337821735)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'DEPTNO'
+,p_param_type=>'BODY'
+,p_data_type=>'NUMBER'
+,p_is_required=>false
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25060674698823100)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'Content-Type'
+,p_param_type=>'HEADER'
+,p_data_type=>'VARCHAR2'
+,p_is_required=>false
+,p_value=>'application/json'
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25081012376108580)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'ErrorMessage'
+,p_param_type=>'BODY'
+,p_is_required=>false
+,p_direction=>'OUT'
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(25056668652818453)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_operation=>'PUT'
+,p_database_operation=>'UPDATE'
+,p_url_pattern=>'/:id'
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp_shared.create_web_source_operation(
+ p_id=>wwv_flow_imp.id(25057050899818454)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_operation=>'DELETE'
+,p_database_operation=>'DELETE'
+,p_url_pattern=>'/:id'
+,p_allow_fetch_all_rows=>false
+);
+wwv_flow_imp.component_end;
+end;
+/
