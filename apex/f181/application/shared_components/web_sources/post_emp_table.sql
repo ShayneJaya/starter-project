@@ -19,7 +19,7 @@ wwv_flow_imp_shared.create_web_source_module(
 ,p_data_profile_id=>wwv_flow_imp.id(25054531346818445)
 ,p_remote_server_id=>wwv_flow_imp.id(24060350621445966)
 ,p_url_path_prefix=>'hr/emp_post_example/'
-,p_version_scn=>41917235281283
+,p_version_scn=>41923941492935
 );
 wwv_flow_imp_shared.create_web_source_operation(
  p_id=>wwv_flow_imp.id(25055842788818450)
@@ -38,6 +38,7 @@ wwv_flow_imp_shared.create_web_source_operation(
 ,p_request_body_template=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '{"ename":"#ENAME#",',
 '"ejob":"#EJOB#",',
+'"hiredate": #HIREDATE#,',
 '"mgr": #MGR#,',
 '"sal": #SAL#,',
 '"comm": #COMM#,',
@@ -117,6 +118,15 @@ wwv_flow_imp_shared.create_web_source_param(
 ,p_param_type=>'BODY'
 ,p_is_required=>false
 ,p_direction=>'OUT'
+);
+wwv_flow_imp_shared.create_web_source_param(
+ p_id=>wwv_flow_imp.id(25362932659747318)
+,p_web_src_module_id=>wwv_flow_imp.id(25055637796818449)
+,p_web_src_operation_id=>wwv_flow_imp.id(25056201364818452)
+,p_name=>'HIREDATE'
+,p_param_type=>'BODY'
+,p_data_type=>'VARCHAR2'
+,p_is_required=>false
 );
 wwv_flow_imp_shared.create_web_source_operation(
  p_id=>wwv_flow_imp.id(25056668652818453)

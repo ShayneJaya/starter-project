@@ -15,6 +15,7 @@ prompt --install
 @@application/shared_components/data_profiles/newdocumentunderstanding.sql
 @@application/shared_components/data_profiles/employees_table_sample.sql
 @@application/shared_components/data_profiles/post_emp_table.sql
+@@application/shared_components/data_profiles/get_put_emp_table.sql
 @@application/shared_components/web_sources/list_objects.sql
 @@application/shared_components/web_sources/multipartupload_data_source.sql
 @@application/shared_components/web_sources/uploadpart.sql
@@ -22,6 +23,7 @@ prompt --install
 @@application/shared_components/web_sources/newdocumentunderstanding.sql
 @@application/shared_components/web_sources/employees_table_sample.sql
 @@application/shared_components/web_sources/post_emp_table.sql
+@@application/shared_components/web_sources/get_put_emp_table.sql
 @@application/shared_components/navigation/lists/navigation_menu.sql
 @@application/shared_components/navigation/lists/navigation_bar.sql
 @@application/shared_components/navigation/lists/tip_menu.sql
@@ -152,7 +154,6 @@ prompt --install
 @@application/shared_components/plugins/template_component/llm_conversation.sql
 @@application/user_interfaces/combined_files.sql
 @@application/pages/page_00000.sql
-@@application/pages/page_00001.sql
 @@application/pages/page_00002.sql
 @@application/pages/page_00003.sql
 @@application/pages/page_00004.sql
@@ -211,6 +212,9 @@ prompt --install
 @@application/pages/page_00057.sql
 @@application/pages/page_00058.sql
 @@application/pages/page_00060.sql
+@@application/pages/page_00062.sql
+@@application/pages/page_00063.sql
+@@application/pages/page_00064.sql
 @@application/pages/page_09999.sql
 @@application/pages/page_10000.sql
 @@application/pages/page_10010.sql

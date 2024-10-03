@@ -25,6 +25,7 @@ echo -e "pwd: $PWD"
 
 # run sqlplus, execute the script, then get the error list and exit
 # VSCODE_TASK_COMPILE_BIN is set in the config.sh file (either sqlplus or sqlcl)
+
 $VSCODE_TASK_COMPILE_BIN $DB_CONN << EOF
 set define off
 --
@@ -33,7 +34,7 @@ set define off
 -- alter session set plsql_warnings = 'ENABLE:ALL';
 -- 
 -- #38: This will raise a warning message in SQL*Plus but worth keeping in to encourage use if using SQLcl to compile
-set codescan all
+--  set codescan all
 --
 -- Load user specific commands here
 $VSCODE_TASK_COMPILE_SQL_PREFIX
@@ -46,8 +47,3 @@ set define on
 show errors
 exit;
 EOF
-
-
-
-
-

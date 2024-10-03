@@ -15,15 +15,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(32830540642813891)
 ,p_name=>'Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>41877215222371
-);
-wwv_flow_imp_shared.create_list_item(
- p_id=>wwv_flow_imp.id(33129942118814231)
-,p_list_item_display_sequence=>10
-,p_list_item_link_text=>'Home'
-,p_list_item_link_target=>'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-home'
-,p_list_item_current_type=>'TARGET_PAGE'
+,p_version_scn=>41923938350763
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(37822243075342947)
@@ -59,6 +51,15 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_icon=>'fa-table-pointer'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'33'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(25333655680682215)
+,p_list_item_display_sequence=>220
+,p_list_item_link_text=>'EMP TABLE - TEST DMED'
+,p_list_item_link_target=>'f?p=&APP_ID.:63:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'63,64'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(39094219237624615)

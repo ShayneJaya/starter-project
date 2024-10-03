@@ -233,6 +233,13 @@ wwv_flow_imp_shared.create_web_source_comp_param(
 ,p_value=>'P60_RESPONSE'
 ,p_ignore_output=>false
 );
+wwv_flow_imp_shared.create_web_source_comp_param(
+ p_id=>wwv_flow_imp.id(25363402929747323)
+,p_page_id=>60
+,p_web_src_param_id=>wwv_flow_imp.id(25362932659747318)
+,p_page_process_id=>wwv_flow_imp.id(25032333675570085)
+,p_value_type=>'NULL'
+);
 wwv_flow_imp.component_end;
 end;
 /
