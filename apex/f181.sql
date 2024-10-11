@@ -33,7 +33,7 @@ prompt APPLICATION 181 - Demo Application
 -- Application Export:
 --   Application:     181
 --   Name:            Demo Application
---   Date and Time:   18:02 Thursday October 3, 2024
+--   Date and Time:   15:49 Friday October 11, 2024
 --   Exported By:     ADMIN
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -42,8 +42,8 @@ prompt APPLICATION 181 - Demo Application
 --       Validations:              1
 --       Processes:               72
 --       Regions:                146
---       Buttons:                 55
---       Dynamic Actions:         31
+--       Buttons:                 56
+--       Dynamic Actions:         32
 --     Shared Components:
 --       Logic:
 --         Items:                  1
@@ -43135,8 +43135,20 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_alignment=>'RIGHT'
 );
 wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(25344694684686033)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(25330095146682202)
+,p_button_name=>'Refresh'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(33006525109813997)
+,p_button_image_alt=>'Refresh Error Msg'
+,p_button_position=>'NEXT'
+,p_warn_on_unsaved_changes=>null
+);
+wwv_flow_imp_page.create_page_button(
  p_id=>wwv_flow_imp.id(25331804809682208)
-,p_button_sequence=>30
+,p_button_sequence=>20
 ,p_button_plug_id=>wwv_flow_imp.id(25330095146682202)
 ,p_button_name=>'SAVE'
 ,p_button_action=>'SUBMIT'
@@ -43145,7 +43157,6 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_is_hot=>'Y'
 ,p_button_image_alt=>'Apply Changes'
 ,p_button_position=>'NEXT'
-,p_button_alignment=>'RIGHT'
 ,p_button_condition=>'P64_EMPNO'
 ,p_button_condition_type=>'ITEM_IS_NOT_NULL'
 ,p_database_action=>'UPDATE'
@@ -43365,6 +43376,31 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_DIALOG_CANCEL'
 );
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(25344763092686034)
+,p_name=>'New'
+,p_event_sequence=>20
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(25344694684686033)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(25344818701686035)
+,p_event_id=>wwv_flow_imp.id(25344763092686034)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P64_ERROR_MESSAGE'
+,p_attribute_01=>'PLSQL_EXPRESSION'
+,p_attribute_04=>':P64_ERROR_MESSAGE'
+,p_attribute_08=>'N'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(25332650780682210)
 ,p_process_sequence=>10
@@ -43376,7 +43412,6 @@ wwv_flow_imp_page.create_page_process(
 ,p_attribute_05=>'N'
 ,p_attribute_06=>'Y'
 ,p_attribute_08=>'Y'
-,p_process_error_message=>'&P64_ERROR_MESSAGE.'
 ,p_internal_uid=>25332650780682210
 );
 wwv_flow_imp_page.create_page_process(
