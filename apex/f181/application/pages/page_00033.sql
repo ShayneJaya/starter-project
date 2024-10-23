@@ -684,6 +684,16 @@ wwv_flow_imp_page.create_ig_report_column(
 ,p_is_visible=>true
 ,p_is_frozen=>false
 );
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(26177826994184810)
+,p_button_sequence=>10
+,p_button_name=>'SMAPLEBTN'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(33006525109813997)
+,p_button_image_alt=>'Smaplebtn'
+,p_grid_new_row=>'Y'
+);
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(20683567354345332)
 ,p_process_sequence=>10

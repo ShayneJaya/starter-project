@@ -54,7 +54,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_string_02=>'G_CLOUD_URL'
 ,p_substitution_value_02=>'https://natdcshjumpstartprod.objectstorage.us-ashburn-1.oci.customer-oci.com/n/natdcshjumpstartprod'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
-,p_files_version=>15
+,p_files_version=>68
 ,p_print_server_type=>'NATIVE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'Y'

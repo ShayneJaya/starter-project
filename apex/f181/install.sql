@@ -4,9 +4,12 @@ prompt --install
 @@application/create_application.sql
 @@application/user_interfaces.sql
 @@workspace/credentials/oci_credentials_gen_ai.sql
+@@workspace/credentials/credentials_for_oracle_fusion_cloud_procurement.sql
 @@workspace/credentials/oci_credentials.sql
 @@workspace/remote_servers/document_aiservice_us_ashburn_1_oci_oraclecloud_com_20221109_actions.sql
 @@workspace/remote_servers/ijegqeyui1cwvrq_b4qqa8czfoctzxjh_adb_us_ashburn_1_oraclecloudapps_com_ords_ci_dev.sql
+@@workspace/remote_servers/wgjmgewqyqq_us_ashburn_1_functions_oci_oraclecloud_com_20181201_functions.sql
+@@workspace/remote_servers/fa_evwb_saasfademo1_ds_fa_oraclepdemos_com_fscmrestapi_resources.sql
 @@workspace/remote_servers/objectstorage_us_ashburn_1_oraclecloud_com_n_natdcshjumpstartprod.sql
 @@application/shared_components/data_profiles/list_objects.sql
 @@application/shared_components/data_profiles/multipartupload_data_source.sql
@@ -16,6 +19,9 @@ prompt --install
 @@application/shared_components/data_profiles/employees_table_sample.sql
 @@application/shared_components/data_profiles/post_emp_table.sql
 @@application/shared_components/data_profiles/get_put_emp_table.sql
+@@application/shared_components/data_profiles/testac_function_invoke.sql
+@@application/shared_components/data_profiles/function_invoke_test_testac.sql
+@@application/shared_components/data_profiles/oracle_fusion_cloud_procurement.sql
 @@application/shared_components/web_sources/list_objects.sql
 @@application/shared_components/web_sources/multipartupload_data_source.sql
 @@application/shared_components/web_sources/uploadpart.sql
@@ -24,6 +30,9 @@ prompt --install
 @@application/shared_components/web_sources/employees_table_sample.sql
 @@application/shared_components/web_sources/post_emp_table.sql
 @@application/shared_components/web_sources/get_put_emp_table.sql
+@@application/shared_components/web_sources/testac_function_invoke.sql
+@@application/shared_components/web_sources/function_invoke_test_testac.sql
+@@application/shared_components/web_sources/oracle_fusion_cloud_procurement.sql
 @@application/shared_components/navigation/lists/navigation_menu.sql
 @@application/shared_components/navigation/lists/navigation_bar.sql
 @@application/shared_components/navigation/lists/tip_menu.sql
@@ -31,6 +40,8 @@ prompt --install
 @@application/shared_components/navigation/listentry.sql
 @@application/shared_components/files/demo_js.sql
 @@application/shared_components/files/main_js.sql
+@@application/shared_components/files/longhtml_html.sql
+@@application/shared_components/files/apexlifycyclev3_html.sql
 @@application/shared_components/files/icons_app_icon_32_png.sql
 @@application/shared_components/files/icons_app_icon_144_rounded_png.sql
 @@application/shared_components/files/icons_app_icon_192_png.sql
@@ -211,10 +222,14 @@ prompt --install
 @@application/pages/page_00056.sql
 @@application/pages/page_00057.sql
 @@application/pages/page_00058.sql
+@@application/pages/page_00059.sql
 @@application/pages/page_00060.sql
+@@application/pages/page_00061.sql
 @@application/pages/page_00062.sql
 @@application/pages/page_00063.sql
 @@application/pages/page_00064.sql
+@@application/pages/page_00065.sql
+@@application/pages/page_00066.sql
 @@application/pages/page_09999.sql
 @@application/pages/page_10000.sql
 @@application/pages/page_10010.sql

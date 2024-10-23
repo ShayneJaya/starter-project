@@ -215,6 +215,12 @@ wwv_flow_imp_shared.create_menu_option(
 ,p_page_id=>63
 );
 wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(26176522204177582)
+,p_short_name=>'Understanding the Oracle APEX Application Development Lifecycle'
+,p_link=>'f?p=&APP_ID.:65:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>65
+);
+wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(37825093988358427)
 ,p_short_name=>'#1 Managing User Preferences'
 ,p_link=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.:::'
