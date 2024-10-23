@@ -33,12 +33,12 @@ prompt APPLICATION 181 - Demo Application
 -- Application Export:
 --   Application:     181
 --   Name:            Demo Application
---   Date and Time:   18:46 Wednesday October 23, 2024
+--   Date and Time:   18:52 Wednesday October 23, 2024
 --   Exported By:     ADMIN
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     74
---       Items:                  166
+--       Items:                  167
 --       Validations:              1
 --       Processes:               73
 --       Regions:                148
@@ -28611,6 +28611,21 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_template_id=>wwv_flow_imp.id(33006525109813997)
 ,p_button_image_alt=>'Save Preferences'
 ,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(26177917608184811)
+,p_name=>'P2_NEW_ITEM'
+,p_item_sequence=>60
+,p_item_default=>'My new item'
+,p_prompt=>'New Item'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(33004073220813993)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(34702028190991632)
