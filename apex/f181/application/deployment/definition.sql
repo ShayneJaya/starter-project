@@ -11,7 +11,9 @@ wwv_flow_imp.component_begin (
 ,p_default_id_offset=>0
 ,p_default_owner=>'WKSP_CIDEV'
 );
-null;
+wwv_flow_imp_shared.create_install(
+ p_id=>wwv_flow_imp.id(27549940144127781)
+);
 wwv_flow_imp.component_end;
 end;
 /

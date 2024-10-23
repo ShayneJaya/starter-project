@@ -33,7 +33,7 @@ prompt APPLICATION 181 - Demo Application
 -- Application Export:
 --   Application:     181
 --   Name:            Demo Application
---   Date and Time:   17:13 Wednesday October 23, 2024
+--   Date and Time:   18:46 Wednesday October 23, 2024
 --   Exported By:     ADMIN
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -47198,7 +47198,9 @@ end;
 /
 prompt --application/deployment/definition
 begin
-null;
+wwv_flow_imp_shared.create_install(
+ p_id=>wwv_flow_imp.id(27549940144127781)
+);
 end;
 /
 prompt --application/deployment/checks
