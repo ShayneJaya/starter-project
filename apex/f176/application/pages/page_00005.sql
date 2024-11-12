@@ -1,0 +1,212 @@
+prompt --application/pages/page_00005
+begin
+--   Manifest
+--     PAGE: 00005
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.1'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>176
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_CIDEV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>5
+,p_name=>'New Appointment'
+,p_alias=>'NEW-APPOINTMENT'
+,p_step_title=>'New Appointment'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'17'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(14865297431335609)
+,p_plug_name=>'Patient Appointment Details'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(14370403510763152)
+,p_plug_display_sequence=>10
+,p_location=>null
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML')).to_clob
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(14914029700974298)
+,p_plug_name=>'Breadcrumb'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(14382896350763163)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_imp.id(14275340557763067)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_imp.id(14453390771763210)
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(14866619228335623)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(14865297431335609)
+,p_button_name=>'BOOK_APPT'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(14451707323763209)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Book Appointment'
+,p_button_position=>'CHANGE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14865338629335610)
+,p_name=>'P5_NAME'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(14865297431335609)
+,p_prompt=>'Name'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(14449274205763203)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14865562388335612)
+,p_name=>'P5_EMAIL'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(14865297431335609)
+,p_prompt=>'Email'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(14449274205763203)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14865636001335613)
+,p_name=>'P5_DESC'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(14865297431335609)
+,p_prompt=>'Problem'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'STATIC:Psychiatric;PSYCHIATRY,Cancer;ONCOLOGY,ENT;ENT,Gastroenteric;GASTRO,Cardiac;CARDIOLOGY,General;GENERAL'
+,p_lov_display_null=>'YES'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(14449274205763203)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_attribute_01=>'NONE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14865779684335614)
+,p_name=>'P5_APPT_DATE'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(14865297431335609)
+,p_prompt=>'Appointment Date'
+,p_format_mask=>'DD-MON-YYYY HH24:MI:SS'
+,p_display_as=>'NATIVE_DATE_PICKER_APEX'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(14449274205763203)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'POPUP'
+,p_attribute_03=>'NONE'
+,p_attribute_06=>'NONE'
+,p_attribute_09=>'N'
+,p_attribute_11=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14865871293335615)
+,p_name=>'P5_DOC'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_imp.id(14865297431335609)
+,p_prompt=>'Doctor'
+,p_display_as=>'NATIVE_POPUP_LOV'
+,p_lov=>'select dname from doctor where specialization = :P5_DESC'
+,p_lov_cascade_parent_items=>'P5_DESC'
+,p_ajax_items_to_submit=>'P5_DESC'
+,p_ajax_optimize_refresh=>'Y'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(14449274205763203)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'POPUP'
+,p_attribute_02=>'FIRST_ROWSET'
+,p_attribute_04=>'N'
+,p_attribute_05=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(14865931028335616)
+,p_name=>'P5_AGE'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_imp.id(14865297431335609)
+,p_prompt=>'Age'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(14449274205763203)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(14866062045335617)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_WORKFLOW'
+,p_process_name=>'Submit Appointment Workflow'
+,p_attribute_01=>'START'
+,p_attribute_02=>wwv_flow_imp.id(11961734146645823)
+,p_attribute_03=>'P5_DOC'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_success_message=>'Appointment Submitted Successfully!'
+,p_internal_uid=>14866062045335617
+);
+wwv_flow_imp_shared.create_workflow_comp_param(
+ p_id=>wwv_flow_imp.id(14866197617335618)
+,p_page_id=>5
+,p_workflow_variable_id=>wwv_flow_imp.id(11962555310645831)
+,p_page_process_id=>wwv_flow_imp.id(14866062045335617)
+,p_value_type=>'ITEM'
+,p_value=>'P5_AGE'
+);
+wwv_flow_imp_shared.create_workflow_comp_param(
+ p_id=>wwv_flow_imp.id(14866289247335619)
+,p_page_id=>5
+,p_workflow_variable_id=>wwv_flow_imp.id(11962891674645834)
+,p_page_process_id=>wwv_flow_imp.id(14866062045335617)
+,p_value_type=>'ITEM'
+,p_value=>'P5_EMAIL'
+);
+wwv_flow_imp_shared.create_workflow_comp_param(
+ p_id=>wwv_flow_imp.id(14866303778335620)
+,p_page_id=>5
+,p_workflow_variable_id=>wwv_flow_imp.id(11962477939645830)
+,p_page_process_id=>wwv_flow_imp.id(14866062045335617)
+,p_value_type=>'ITEM'
+,p_value=>'P5_NAME'
+);
+wwv_flow_imp_shared.create_workflow_comp_param(
+ p_id=>wwv_flow_imp.id(14866485701335621)
+,p_page_id=>5
+,p_workflow_variable_id=>wwv_flow_imp.id(11962774518645833)
+,p_page_process_id=>wwv_flow_imp.id(14866062045335617)
+,p_value_type=>'ITEM'
+,p_value=>'P5_DESC'
+);
+wwv_flow_imp_shared.create_workflow_comp_param(
+ p_id=>wwv_flow_imp.id(14866596290335622)
+,p_page_id=>5
+,p_workflow_variable_id=>wwv_flow_imp.id(11962645543645832)
+,p_page_process_id=>wwv_flow_imp.id(14866062045335617)
+,p_value_type=>'ITEM'
+,p_value=>'P5_APPT_DATE'
+);
+wwv_flow_imp.component_end;
+end;
+/
