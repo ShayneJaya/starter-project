@@ -1,3 +1,4 @@
-create or replace force view WKSP_CIDEV.my_view_test_demo1 as
-  select * from DEPT
-;
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "DEV_USER"."MY_VIEW_TEST_DEMO" ("EMPNO", "ENAME", "JOB", "MGR", "HIREDATE", "SAL", "COMM", "DEPTNO") DEFAULT COLLATION "USING_NLS_COMP"  AS
+  select * from WKSP_CIDEV.EMP;
+
