@@ -1,0 +1,85 @@
+prompt --application/shared_components/data_profiles/test_json_source
+begin
+--   Manifest
+--     DATA PROFILE: TEST JSON SOURCE
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.11.30'
+,p_release=>'24.2.14'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>247
+,p_default_id_offset=>0
+,p_default_owner=>'DEV_USER'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(56500610651906849)
+,p_name=>'TEST JSON SOURCE'
+,p_format=>'JSON'
+,p_use_raw_json_selectors=>false
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(56500981650906867)
+,p_data_profile_id=>wwv_flow_imp.id(56500610651906849)
+,p_name=>'C_ID'
+,p_sequence=>1
+,p_is_primary_key=>true
+,p_column_type=>'DATA'
+,p_parent_column_id=>wwv_flow_imp.id(56501204396906869)
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'_id'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(56501204396906869)
+,p_data_profile_id=>wwv_flow_imp.id(56500610651906849)
+,p_name=>'DATA'
+,p_sequence=>2
+,p_column_type=>'TABLE'
+,p_data_type=>'DOCUMENT_FRAGMENT'
+,p_has_time_zone=>false
+,p_is_common=>false
+,p_selector=>'DATA'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(56501580480906870)
+,p_data_profile_id=>wwv_flow_imp.id(56500610651906849)
+,p_name=>'PRICE'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_parent_column_id=>wwv_flow_imp.id(56501204396906869)
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'price'
+,p_remote_data_type=>'number'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(56501832642906871)
+,p_data_profile_id=>wwv_flow_imp.id(56500610651906849)
+,p_name=>'INSTOCK'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_parent_column_id=>wwv_flow_imp.id(56501204396906869)
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'inStock'
+,p_remote_data_type=>'boolean'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(56502121846906872)
+,p_data_profile_id=>wwv_flow_imp.id(56500610651906849)
+,p_name=>'PRODUCT'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_parent_column_id=>wwv_flow_imp.id(56501204396906869)
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'product'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp.component_end;
+end;
+/

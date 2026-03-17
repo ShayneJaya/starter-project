@@ -1,0 +1,166 @@
+prompt --application/shared_components/data_profiles/sunset_public_api
+begin
+--   Manifest
+--     DATA PROFILE: Sunset Public API
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.11.30'
+,p_release=>'24.2.14'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>247
+,p_default_id_offset=>0
+,p_default_owner=>'DEV_USER'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'Sunset Public API'
+,p_format=>'JSON'
+,p_use_raw_json_selectors=>false
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87486116713575952)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'TZID'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'tzid'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87486461867575954)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'STATUS'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'status'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87486737004575955)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_SUNSET'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.sunset'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87487096009575956)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_SUNRISE'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.sunrise'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87487399833575957)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_DAY_LENGTH'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.day_length'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87487616410575958)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_SOLAR_NOON'
+,p_sequence=>6
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.solar_noon'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87487934027575959)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_CIVIL_TWILIGHT_END'
+,p_sequence=>7
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.civil_twilight_end'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87488250315575960)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_CIVIL_TWILIGHT_BEGIN'
+,p_sequence=>8
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.civil_twilight_begin'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87488567576575961)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_NAUTICAL_TWILIGHT_END'
+,p_sequence=>9
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.nautical_twilight_end'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87488865889575962)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_NAUTICAL_TWILIGHT_BEGIN'
+,p_sequence=>10
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.nautical_twilight_begin'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87489192557575965)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_ASTRONOMICAL_TWILIGHT_END'
+,p_sequence=>11
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.astronomical_twilight_end'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(87489435709575966)
+,p_data_profile_id=>wwv_flow_imp.id(87485937603575936)
+,p_name=>'RESULTS_ASTRONOMICAL_TWILIGHT_BEGIN'
+,p_sequence=>12
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'results.astronomical_twilight_begin'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp.component_end;
+end;
+/

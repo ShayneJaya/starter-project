@@ -1,0 +1,118 @@
+prompt --application/shared_components/data_profiles/list_tenancy_compartments
+begin
+--   Manifest
+--     DATA PROFILE: List Tenancy Compartments
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.11.30'
+,p_release=>'24.2.14'
+,p_default_workspace_id=>10135125799703166
+,p_default_application_id=>247
+,p_default_id_offset=>0
+,p_default_owner=>'DEV_USER'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'List Tenancy Compartments'
+,p_format=>'JSON'
+,p_use_raw_json_selectors=>false
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71972267428656702)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'ID'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'id'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71972560966656705)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'NAME'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'name'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71972884773656707)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'DEFINEDTAGS_ORACLE_TAGS_CREATEDBY'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'definedTags."Oracle-Tags".CreatedBy'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71973126193656708)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'DEFINEDTAGS_ORACLE_TAGS_CREATEDON'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_data_type=>'TIMESTAMP WITH TIME ZONE'
+,p_format_mask=>'YYYY"-"MM"-"DD"T"HH24":"MI:SS.FF9TZR'
+,p_has_time_zone=>true
+,p_selector=>'definedTags."Oracle-Tags".CreatedOn'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71973445582656709)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'DESCRIPTION'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'description'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71973756260656710)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'TIMECREATED'
+,p_sequence=>6
+,p_column_type=>'DATA'
+,p_data_type=>'TIMESTAMP WITH TIME ZONE'
+,p_format_mask=>'YYYY"-"MM"-"DD"T"HH24":"MI:SS.FF9TZR'
+,p_has_time_zone=>true
+,p_selector=>'timeCreated'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71974093723656712)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'COMPARTMENTID'
+,p_sequence=>7
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'compartmentId'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(71974365839656713)
+,p_data_profile_id=>wwv_flow_imp.id(71972076545656689)
+,p_name=>'LIFECYCLESTATE'
+,p_sequence=>8
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>32767
+,p_has_time_zone=>false
+,p_selector=>'lifecycleState'
+,p_remote_data_type=>'string'
+);
+wwv_flow_imp.component_end;
+end;
+/
