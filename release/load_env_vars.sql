@@ -1,6 +1,6 @@
 -- GENERATED from build/build.sh DO NOT modify this file directly as all changes will be overwritten upon next build\n\n
 define env_schema_name=WKSP_CIDEV
-define env_apex_app_ids=247,224
+define env_apex_app_ids=215,216
 define env_apex_workspace=CI_DEV
 
 

@@ -32,3 +32,26 @@ export_apex_app $VERSION
 
 # Generate release support sql files 
 gen_release_sql
+
+
+test,
+ test,
+ intro,
+ tef,
+ like,
+ same,
+ as,
+ do,
+ done,
+ elif,
+ else,
+ esac,
+ fi,
+ for,
+ function,
+ if,
+ in,
+ select,
+ then,
+ until,
+ while
